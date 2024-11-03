@@ -9,6 +9,12 @@ import debug from 'debug';
 import { createServer } from 'http';
 
 /**
+ * Setup database
+ * */
+import { initializeDatabase } from '../db/db_setup.js';
+await initializeDatabase();
+
+/**
  * Get port from environment and store in Express.
  */
 

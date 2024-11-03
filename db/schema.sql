@@ -1,0 +1,46 @@
+USE rf;
+
+CREATE TABLE `Product` (
+    `product_id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    `product_name` VARCHAR(255) NOT NULL,
+    `price` DECIMAL(8, 2) NOT NULL,
+    `quantity` INT NOT NULL,
+    `product_category` VARCHAR(255) NOT NULL,
+    `created_at` DATETIME DEFAULT CURRENT_TIMESTAMP,
+    `updated_at` DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+
+CREATE TABLE `User` (
+    `user_id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    `user_name` VARCHAR(255) NOT NULL,
+    `age` INT UNSIGNED NULL,
+    `gender` ENUM('M', 'F', 'Other') NULL,
+    `registration_date` DATETIME NOT NULL,
+    `created_at` DATETIME DEFAULT CURRENT_TIMESTAMP,
+    `updated_at` DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+
+CREATE TABLE `Cart` (
+    `cart_id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    `user_id` BIGINT UNSIGNED NOT NULL,
+    `size` INT UNSIGNED NOT NULL DEFAULT 0,
+    `created_at` DATETIME DEFAULT CURRENT_TIMESTAMP,
+    `updated_at` DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    INDEX `cart_user_id_index` (`user_id`)
+);
+
+CREATE TABLE `Cart_Item` (
+    `item_id` BIGINT UNSIGNED NOT NULL,
+    `cart_id` BIGINT UNSIGNED NOT NULL,
+    `product_id` BIGINT UNSIGNED NOT NULL,
+    PRIMARY KEY (`item_id`),
+    INDEX `cart_item_cart_id_index` (`cart_id`),
+    INDEX `cart_item_product_id_index` (`product_id`)
+);
+
+ALTER TABLE `Cart_Item`
+    ADD CONSTRAINT `cart_item_cart_id_foreign` FOREIGN KEY (`cart_id`) REFERENCES `Cart`(`cart_id`) ON DELETE CASCADE,
+    ADD CONSTRAINT `cart_item_product_id_foreign` FOREIGN KEY (`product_id`) REFERENCES `Product`(`product_id`) ON DELETE CASCADE;
+
+ALTER TABLE `Cart`
+    ADD CONSTRAINT `cart_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `User`(`user_id`) ON DELETE CASCADE;
