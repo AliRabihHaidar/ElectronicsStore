@@ -2,6 +2,7 @@
 <head>
     <link rel="stylesheet" href="css/products_styling.css">
     <link rel="stylesheet" href="css/Main_styling.css">
+    <title><%= title %></title>
 </head>
 <body>
     <header>
@@ -20,173 +21,29 @@
     <br>
     <div>
         <ul>
-            <li><a href="index">Home</li>
+            <li><a href="/">Home</li>
             <li class="has-submenu"><a href="about">About</a></li>
             <li><a href="products">Products</a></li>
             <li><a href="contact">Contact Us</a></li>
             <div id="cart-icon"><a href="cart">View Cart</a></div>
         </ul>
-    </div><br>
+    </div>
+    <br>
+
+    <input id="search-input" type="text" placeholder="Search...">
+
     <div class="product-grid">
+        <% products.forEach(product => { %>
         <div class="product-item">
-            <img src="images/pc1.jpg" alt="PC 1">
             <div class="product-info">
-                <h3>Desktop Computer 1</h3>
-                <p>$899.99</p>
-                <p>Powerful desktop computer with high-end specifications for a seamless computing experience.</p>
-                <button class="add-to-cart-btn">Add to Cart</button>
+                <img src="images/<%= product.product_name %>.png" alt="<%= product.product_name %>">
+                <h3><%= product.product_name %></h3>
+                <p>$<%= product.price %></p>
+                <p><%= product.description %></p>
+                <button class="add-to-cart-btn" onclick="addToCart(<%= product.product_id %>)">Add to Cart</button>
             </div>
         </div>
-        <div class="product-item">
-            <img src="images/pc2.jpg" alt="PC 2">
-            <div class="product-info">
-                <h3>Desktop Computer 2</h3>
-                <p>$1,199.99</p>
-                <p>Advanced desktop computer designed for gaming enthusiasts and multimedia professionals.</p>
-                <button class="add-to-cart-btn">Add to Cart</button>
-            </div>
-        </div>
-        <div class="product-item">
-            <img src="images/pc3.jpg" alt="PC 3">
-            <div class="product-info">
-                <h3>Desktop Computer 3</h3>
-                <p>$999.99</p>
-                <p>Sleek and compact desktop computer suitable for both work and entertainment.</p>
-                <button class="add-to-cart-btn">Add to Cart</button>
-            </div>
-        </div>
-        <div class="product-item">
-            <img src="images/pc4.jpg" alt="PC 4">
-            <div class="product-info">
-                <h3>Desktop Computer 4</h3>
-                <p>$1,499.99</p>
-                <p>High-performance desktop computer with cutting-edge features and a stylish design.</p>
-                <button class="add-to-cart-btn">Add to Cart</button>
-            </div>
-        </div>
-        <div class="product-item">
-            <img src="images/cctv1.jpg" alt="CCTV Camera 1">
-            <div class="product-info">
-                <h3>HD CCTV Camera 1</h3>
-                <p>$149.99</p>
-                <p>High-definition CCTV camera with night vision capabilities for enhanced security monitoring.</p>
-                <button class="add-to-cart-btn">Add to Cart</button>
-            </div>
-        </div>
-        <div class="product-item">
-            <img src="images/cctv2.jpg" alt="CCTV Camera 2">
-            <div class="product-info">
-                <h3>HD CCTV Camera 2</h3>
-                <p>$169.99</p>
-                <p>Compact CCTV camera with motion detection and remote viewing features.</p>
-                <button class="add-to-cart-btn">Add to Cart</button>
-            </div>
-        </div>
-
-        <div class="product-item">
-            <img src="images/cctv3.jpg" alt="CCTV Camera 3">
-            <div class="product-info">
-                <h3>Outdoor CCTV Camera 3</h3>
-                <p>$199.99</p>
-                <p>Weather-resistant outdoor CCTV camera with 360-degree coverage and smartphone integration.</p>
-                <button class="add-to-cart-btn">Add to Cart</button>
-            </div>
-        </div>
-
-        
-        <div class="product-item">
-            <img src="images/cctv4.jpg" alt="CCTV Camera 4">
-            <div class="product-info">
-                <h3>Pan-Tilt-Zoom CCTV Camera 4</h3>
-                <p>$249.99</p>
-                <p>PTZ CCTV camera with optical zoom, pan-tilt control, and high-resolution imaging.</p>
-                <button class="add-to-cart-btn">Add to Cart</button>
-            </div>
-        </div>
-
-
-        <div class="product-item">
-            <img src="images/router1.jpg" alt="Network Router 1">
-            <div class="product-info">
-                <h3>Wireless Router 1</h3>
-                <p>$79.99</p>
-                <p>Fast and reliable wireless router with advanced features for seamless network connectivity.</p>
-                <button class="add-to-cart-btn">Add to Cart</button>
-            </div>
-        </div>
-
-        <div class="product-item">
-            <img src="images/router2.png" alt="Network Router 2">
-            <div class="product-info">
-                <h3>Gigabit Ethernet Router 2</h3>
-                <p>$129.99</p>
-                <p>Gigabit router with multiple LAN ports, ideal for high-speed wired connections.</p>
-                <button class="add-to-cart-btn">Add to Cart</button>
-            </div>
-        </div>
-
-        
-        <div class="product-item">
-            <img src="images/switch1.png" alt="Network Switch 1">
-            <div class="product-info">
-                <h3>Managed Network Switch 1</h3>
-                <p>$149.99</p>
-                <p>Managed network switch with VLAN support and remote management capabilities.</p> 
-                <button class="add-to-cart-btn">Add to Cart</button>
-            </div>
-        </div>
-
-        <div class="product-item">
-            <img src="images/accesspoint1.jpg" alt="Wireless Access Point 1">
-            <div class="product-info">
-                <h3>Wireless Access Point 1</h3>
-                <p>$89.99</p>
-                <p>High-performance wireless access point with dual-band support and secure guest access.</p> 
-                <button class="add-to-cart-btn">Add to Cart</button>
-            </div>
-        </div>
-
-
-        <div class="product-item">
-            <img src="images/phone1.jpg" alt="Phone 1">
-            <div class="product-info">
-                <h3>Smartphone 1</h3>
-                <p>$699.99</p>
-                <p>Feature-packed smartphone with a stunning display, powerful camera, and long-lasting battery life.</p>
-                <button class="add-to-cart-btn">Add to Cart</button>
-            </div>
-        </div>
-
-
-        <div class="product-item">
-            <img src="images/phone2.jpg" alt="Phone 2">
-            <div class="product-info">
-                <h3>Flagship Smartphone 2</h3>
-                <p>$899.99</p>
-                <p>Flagship smartphone with premium build quality, advanced camera features, and 5G connectivity.</p> 
-                <button class="add-to-cart-btn">Add to Cart</button>
-            </div>
-        </div>
-
-        <div class="product-item">
-            <img src="images/phone3.jpg" alt="Phone 3">
-            <div class="product-info">
-                <h3>Budget-friendly Smartphone 3</h3>
-                <p>$399.99</p>
-                <p>Affordable smartphone with a large display, decent performance, and versatile camera options.</p> 
-                <button class="add-to-cart-btn">Add to Cart</button>
-            </div>
-        </div>
-
-        <div class="product-item">
-            <img src="images/phone4.jpg" alt="Phone 4">
-            <div class="product-info">
-                <h3>Compact Smartphone 4</h3>
-                <p>$549.99</p>
-                <p>Compact and stylish smartphone with a focus on portability without compromising on features.</p> 
-                <button class="add-to-cart-btn">Add to Cart</button>
-            </div>
-        </div>
+        <% }); %>
     </div>
 
     <div class="Downbanner">
@@ -204,5 +61,39 @@
           <p>Sunday: Closed</p>
         </div>
     </div>
+
+    <script>
+        // filter products by search query
+        const searchInput = document.getElementById('search-input');
+        const products = document.querySelectorAll('.product-item');
+        
+        searchInput.addEventListener('input', () => {
+            const searchTerm = searchInput.value.toLowerCase();
+            products.forEach(product => {
+                const productName = product.querySelector('h3').textContent.toLowerCase();
+                if (productName.includes(searchTerm)) {
+                    product.style.display = 'block';
+                } else {
+                    product.style.display = 'none';
+                }
+            });
+        });
+    </script>
+    <script>
+        // add to cart button
+        function addToCart(product_id) {
+            // send post request to add product to the cart
+            fetch('/cart/add-to-cart', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({product_id: product_id})
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+            })
+            .catch(error => console.error(error));
+        }
+    </script>
 </body>
 </html>

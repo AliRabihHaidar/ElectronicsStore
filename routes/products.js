@@ -1,9 +1,16 @@
 import express from 'express';
-var productsRouter = express.Router();
+import { getProducts } from '../db/db_utils.js';  // Adjust the path as needed
 
-/* GET users listing. */
-productsRouter.get('/', function(req, res, next) {
-    res.render('products', { title: 'Express' });
+const productsRouter = express.Router();
+
+productsRouter.get('/', async function(req, res, next) {
+    try {
+    const products = await getProducts();
+    res.render('products', { title: 'Products', products: products });
+    } catch (error) {
+    console.error('Error fetching products:', error);
+    next(error);
+    }
 });
 
 export default productsRouter;
