@@ -39,6 +39,18 @@ CREATE TABLE `Cart_Item` (
     INDEX `cart_item_product_id_index` (`product_id`)
 );
 
+CREATE TABLE `Message` (
+	`message_id` bigint unsigned not null AUTO_INCREMENT PRIMARY KEY,
+	`user_id` bigint unsigned not null,
+    `name` varchar(255) not null,
+    `email` varchar(255) not null,
+    `message_content` text not null,
+    `sent_at` DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
+ALTER TABLE Message
+	ADD CONSTRAINT `message_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `user`(`user_id`) ON DELETE CASCADE;
+
 ALTER TABLE `Cart_Item`
     ADD CONSTRAINT `cart_item_cart_id_foreign` FOREIGN KEY (`cart_id`) REFERENCES `Cart`(`cart_id`) ON DELETE CASCADE,
     ADD CONSTRAINT `cart_item_product_id_foreign` FOREIGN KEY (`product_id`) REFERENCES `Product`(`product_id`) ON DELETE CASCADE;

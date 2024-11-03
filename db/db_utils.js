@@ -52,3 +52,12 @@ export async function removeProductFromCart(product_id, user_id) {
         [cart_id, product_id]
     );
 }
+
+export async function save_message(user_id, name, email, message) {
+    await query(`
+        INSERT INTO message
+            (user_id, name, email, message_content)
+        VALUES (?, ?, ?, ?)`,
+        [user_id, name, email, message]
+    );
+}

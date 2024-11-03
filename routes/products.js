@@ -1,5 +1,5 @@
 import express from 'express';
-import { getProducts } from '../db/db_utils.js';  // Adjust the path as needed
+import { getProducts } from '../db/db_utils.js';
 
 const productsRouter = express.Router();
 
