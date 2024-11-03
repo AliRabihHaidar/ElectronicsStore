@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Handlee&display=swap');
+body{
+  padding: 0;
+  margin: 0;
+}
+h3 {
+  margin: 5px 0;
+}
+h1,h2,h3,h4,h5{
+  font-family: 'Acme', sans-serif;
+}
+p {
+  margin: 10px 0;
+  color: #555;
+  font-family: 'Handlee', cursive;
+}
+
+/* header */
+  header {
+    background-color: #1b749e;
+  }
+  /* navigator */
+  .upper-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color:#1b749e;
+      color: black;
+      padding: 10px 20px;
+  } 
+  .social-icons img {
+      width: 20px;
+      margin-right: 10px;
+  }
+  .welcome-message p {
+      color: black;
+      font-size: larger;
+  }
+
+
+/* pages links */
+ul.submenu {
+  display: none;
+  background-color: black;
+  padding: 10px;
+  position: middle;
+  /* font-family: 'Tahoma'; */
+  }
+li.has-submenu:hover ul.submenu {
+  display: block;
+}
+ul.submenu li {
+  display: none;
+  background-color: black;
+  padding: 10px;
+  position: middle;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+li{
+  display: inline-block;
+  margin-right: 20px;
+}
+a {
+  text-decoration: none;
+  color: black;
+  font-weight: bolder;
+  font-size: 18px;
+  font-family: 'Acme', sans-serif;
+}
+a:hover {
+  color: #1b749e;
+}
+
+
+
+/* footer */
+.Downbanner{
+  background-color: #006CA5;
+  color: #fff;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 30px;
+}
+.branch-info ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  color:black;
+}
+#bi{color:black;}
+.branch-info li {
+  display: inline;
+  margin-right: 15px;
+  color:black;
+}
+.branch-info a{
+  line-height: 40px;
+}
+.branch-info a:hover{
+  color: #002133;
+}
+.opening-hours {
+  text-align: center;
+  color: black;
+}
+.opening-hours p {
+  margin: 0;
+  color: black;
+}

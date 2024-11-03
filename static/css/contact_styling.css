@@ -1,0 +1,29 @@
+.contact-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #f1f1f1;
+    border-radius: 8px;
+    color: #006CA5;
+  }
+form {
+    display: flex;
+    flex-direction: column;
+}
+label {
+    margin-bottom: 8px;
+  }
+input, textarea {
+    padding: 10px;
+    margin-bottom: 15px;
+}
+input[type="submit"] {
+    background-color: #006CA5;
+    color: white;
+    cursor: pointer;
+    border: none;
+}
+input[type="submit"]:hover {
+    color: #001b29;
+}
+  
