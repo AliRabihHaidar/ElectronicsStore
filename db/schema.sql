@@ -4,6 +4,7 @@ CREATE TABLE `Product` (
     `product_id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
     `product_name` VARCHAR(255) NOT NULL,
     `price` DECIMAL(8, 2) NOT NULL,
+    `description` TEXT NOT NULL,
     `quantity` INT NOT NULL,
     `product_category` VARCHAR(255) NOT NULL,
     `created_at` DATETIME DEFAULT CURRENT_TIMESTAMP,

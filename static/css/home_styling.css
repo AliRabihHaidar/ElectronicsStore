@@ -1,12 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Handlee&display=swap');
 
-.image1{
-    height: auto; 
-    width: auto; 
-    display: block; 
-    margin: 10 auto;
-}
+#imageContainer {
+            text-align: center;
+        }
+	
+#displayedImage {
+            max-width: 100%;
+            height: auto;
+        }
 .imagetitle {
   font-weight: bold;   
   text-align: center;   
@@ -23,9 +25,9 @@
 }
 
 .image-container {
-    display: flex;
-    flex-wrap: wrap;
-    height: 100vh;
+    display: flex; /* Use flexbox for layout */
+    flex-wrap: wrap; /* Wrap items to the next line if necessary */
+    height: 80vh;
     padding: 0px;
     background-color: #006CA5;
     box-sizing: border-box;
@@ -44,17 +46,17 @@
 .image {
     display: grid;
     grid-template-rows: 100px 50px 1fr;
-    gap: 30px;
+    gap: 60px;
     text-align: center;
     max-width: 200px;
 }
-
 .image img {
     width: 100%;
 }
 .image h2 {
     font-size: 20px;
     font-family: 'Acme', sans-serif;
+	padding: 50px;
 }
 .image p{
     text-wrap: stable;
@@ -64,4 +66,17 @@
 /* remove margin between footer and container */
 .Downbanner{
     margin-top: 0px;
+}
+@media (max-width: 768px) {
+    .center-white {
+        min-width: 100%;
+    }
+
+    .image {
+        max-width: 100%;
+    }
+
+    .image h2 {
+        padding: 10px;
+    }
 }
