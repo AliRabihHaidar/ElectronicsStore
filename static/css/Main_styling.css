@@ -1,127 +1,170 @@
 @import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Handlee&display=swap');
-/* Reset default padding and margin for the body */
+
+
+:root {
+	--primary: white;
+	--secondary: #1b749e;
+	--accent: #4caf50;
+	--text-primary: black;
+	--text-secondary: #555;
+}
 body{
-  padding: 0;
-  margin: 0;
+	background-color: var(--primary);
+	padding: 0;
+	margin: 0;
 }
 h3 {
-  margin: 5px 0;/* Set margin for h3 elements */
+	margin: 5px 0;
 }
-h1,h2,h3,h4,h5{
-  font-family: 'Acme', sans-serif;
+h1, h2, h3, h4, h5{
+	font-family: 'Acme', sans-serif;
 }
 p {
-  margin: 10px 0;
-  color: #555;
-  font-family: 'Handlee', cursive;
+	margin: 10px 0;
+	color: var(--text-secondary);
+	font-family: 'Handlee', cursive;
 }
 
 /* header */
-  header {
-    background-color: #1b749e;
-  }
-  /* navigator */
-  .upper-nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background-color:#1b749e;
-      color: black;
-      padding: 20px 30px;
-  } 
-  .social-icons img {
-      width: 25px;
-      margin-left: 10px;
+header {
+	background-color: var(--secondary);
+}
+	/* navigator */
+	.upper-nav {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		background-color:var(--secondary);
+		color: var(--text-primary);
+		padding: 20px 30px;
+	} 
+	.social-icons img {
+		width: 35px;
+		margin-left: 10px;
 
-  }
-  .logo img {
-      position: absolute;
-    top: 0;
-    right: 0;
-    width: 75px;
-    height: 75px;
-  }
+	}
+	.logo img {
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 90px;
+		aspect-ratio: 1/1;
+	}
+	div ul a {
+		position: relative;
+	}
+	div ul a svg {
+		width: 25px;
+		aspect-ratio: 1/1;
+		fill: var(--text-primary);
+		margin-left: 10px;
+	}
+	div ul a:hover svg {
+		fill: var(--secondary);
+	}
+	#cart-size {
+		position: absolute;
+		top: -8px;
+		right: -8px;
+		background-color: var(--accent);
+		color: white;
+		padding: 3px 5px;
+		font-size: 8px;
+		font-weight: normal;
+		border-radius: 50%;
+		transition: .5s;
+	}
+	div ul a:hover #cart-size {
+		background-color: var(--secondary);
+	}
 
 
 /* pages links */
 ul.submenu {
-  display: none;
-  background-color: black;
-  padding: 10px;
-  position: middle;
-  /* font-family: 'Tahoma'; */
+	display: none;
+	background-color: var(--text-primary);
+	padding: 10px;
+	position: middle;
   }
 li.has-submenu:hover ul.submenu {
-  display: block;
+	display: block;
 }
 ul.submenu li {
-  display: none;
-  background-color: black;
-  padding: 10px;
-  position: middle;
+	display: none;
+	background-color: var(--text-primary);
+	padding: 10px;
+	position: middle;
 }
 ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	justify-content: center;
 }
 li{
-  display: inline-block;
-  margin-right: 20px;
+	display: inline-block;
+	margin-right: 20px;
 }
 a {
-  text-decoration: none;
-  color: black;
-  font-weight: bolder;
-  font-size: 18px;
-  font-family: 'Acme', sans-serif;
+	text-decoration: none;
+	color: var(--text-primary);
+	font-weight: bolder;
+	font-size: 18px;
+	font-family: 'Acme', sans-serif;
 }
 a:hover {
-  color: #1b749e;
+	color: var(--secondary);
 }
 
 
 
 /* footer */
 .Downbanner{
-  background-color: #006CA5;
-  color: #fff;
-  padding: 10px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 30px;
+	background-color: var(--secondary);
+	color: #fff;
+	padding: 10px 20px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-top: 30px;
 }
 .branch-info ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  color:black;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	color:var(--text-primary);
 }
-#bi{color:black;}
+#bi {
+	color:var(--text-primary);
+}
 .branch-info li {
-  display: inline;
-  margin-right: 15px;
-  color:black;
+	display: inline;
+	margin-right: 15px;
+	color:var(--text-primary);
 }
 .branch-info a{
-  line-height: 40px;
+	line-height: 40px;
 }
 .branch-info a:hover{
-  color: #002133;
+	color: #002133;
 }
 .opening-hours {
-  text-align: center;
-  color: black;
+	text-align: center;
+	color: var(--text-primary);
 }
 .opening-hours p {
-  margin: 0;
-  color: black;
+	margin: 0;
+	color: var(--text-primary);
 }
 @media (max-width: 768px) {
+	.social-icons img {
+		width: 25px;
+	}
+	.logo img {
+		width: 70px;
+	}
     .upper-nav {
         padding: 20px; /* Adjusted padding for smaller screens */
     }

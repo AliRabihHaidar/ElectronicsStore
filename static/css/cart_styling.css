@@ -1,14 +1,28 @@
 #cart-container{
     padding: 13px 50px;
 }
-.product-info button {
-    background-color: #d77d10;
-}
-.product-info button:hover {
-    background-color: #d80940;
+#cart-content {
+    color: black;
 }
 .product-item {
     position: relative;
+}
+.remove-from-cart-btn {
+    background-color: #d77d10;
+    border: none;
+    color: var(--primary);
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: .5s;
+}
+.remove-from-cart-btn:hover {
+    background-color: #d80940;
 }
 .quantity {
     position: absolute;

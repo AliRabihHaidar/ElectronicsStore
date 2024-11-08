@@ -1,0 +1,39 @@
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 400px;
+    margin: 104px auto;
+    padding: 20px;
+    background-color: #efeeee;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+input[type="email"],
+input[type="password"],
+button {
+    padding: 10px;
+    font-size: 16px;
+    border: 3px solid #ccc;
+    border-radius: 4px;
+    transition: .5s;
+}
+input:focus {
+    border-color: #1b749e;
+    outline: none;
+}
+button {
+    background-color: #1b749e;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-family: Acme;
+    font-weight: bold;
+    color: #efeeee;
+    border-color: #1b749e;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #efeeee;
+    color: #155d80;
+}

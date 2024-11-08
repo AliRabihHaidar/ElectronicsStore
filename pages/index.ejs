@@ -1,40 +1,45 @@
 <html>
 <head>
-  <link rel="stylesheet" href="css/Main_styling.css">
-  <link rel="stylesheet" href="css/home_styling.css">
+    <link rel="stylesheet" href="css/Main_styling.css">
+    <link rel="stylesheet" href="css/home_styling.css">
 </head>
 <body>
-  <header>
+    <header>
     <nav class="upper-nav">
-      <div class="social-icons">
-        <a href="https://Facebook.com">
-        <img src="images/facebooklogo.png" alt="Facebook"></a>
-        <a href="https://twitter.com">
-        <img src="images/twitterlogo.png" alt="Twitter"></a>
-        <a href="https://instagram.com">
-        <img src="images/instagramlogo.png" alt="Instagram"><a>
-        <a href="https://Linkedin.com">
-        <img src="images/linkedinlogo.png" alt="LinkedIn"></a>
-      </div>
-      <div class="welcome-message">
-        <p>Welcome To Harb Telecom</p>
-      </div>
+        <div class="social-icons">
+            <a href="https://Facebook.com"><img src="images/facebooklogo.png" alt="Facebook"></a>
+            <a href="https://twitter.com"><img src="images/twitterlogo.png" alt="Twitter"></a>
+            <a href="https://instagram.com"><img src="images/instagramlogo.png" alt="Instagram"><a>
+            <a href="https://Linkedin.com"><img src="images/linkedinlogo.png" alt="LinkedIn"></a>
+        </div>
+        <div class="logo">
+            <img src="images/logo.jpg" alt="logo" >
+        </div>
     </nav>
-  </header>
-  <br>
-  <ul>
-    <li><a href="/">Home</li>
-    <li class="has-submenu"><a href="about">About</a></li>
-    <li><a href="products">Products</a></li>
-    <li><a href="contact">Contact Us</a></li>
-    <div id="cart-icon"><a href="cart">View Cart</a></div>
-  </ul><br>
+    </header>
+    <br>
+    <div>
+        <ul>
+            <li><a href="/">Home</li>
+            <li class="has-submenu"><a href="/about">About</a></li>
+            <li><a href="/products">Products</a></li>
+            <li><a href="/contact">Contact Us</a></li>
+            <a href="/cart">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"/></svg>
+                <div id="cart-size"></div>
+            </a>
+        </ul><br>
+    </div>
 
-  <img class="image1" src="images/image1.jpg" alt="Description of the image"><br><br>
-  <div class="imagetitle" > WHY CHOOSE US  </div><br>
-  <div class="undertitle" > Fastest repair service with best price!</div><br>
+    <div id="imageConatiner">
+        <img id="displayedImage" src="images/image1.jpg" alt="Image 1">
+    </div>
+
+    <div class="imagetitle"> WHY CHOOSE US </div>
+    <div class="undertitle"> Fastest repair service at best prices!</div>
+    <br>
     <div class="image-container">
-      <div class="center-white">
+        <div class="center-white">
         <div class="image">
             <img src="images/image2.png" alt="Image 1">
             <h2>Phones</h2>
@@ -57,21 +62,24 @@
         </div>
       </div>
     </div>
-  </div>
-  <div class="Downbanner">
-    <div class="branch-info">
-      <p id="bi">Visit our branches:</p>
-      <ul>
-        <li><a href="#">1st branch:Beirut,Haret Hreik<br>01/550484-81/723602<br><br></a></li>
-        <li><a href="#">2nd branch: Nabatiyeh ,toul<br>01/550484-81/723602<br></a></li>
-      </ul>
+
+    <div class="Downbanner">
+        <div class="branch-info">
+        <p id="bi">Visit our branches:</p>
+        <ul>
+            <li><a href="/">1st branch:Beirut,Haret Hreik<br>01/550484-81/723602<br><br></a></li>
+            <li><a href="/">2nd branch: Nabatiyeh ,toul<br>01/550484-81/723602<br></a></li>
+        </ul>
+        </div>
+        <div class="opening-hours">
+        <p>Opening Hours:</p>
+        <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
+        <p>Saturday: 10:00 AM - 4:00 PM</p>
+        <p>Sunday: Closed</p>
+        </div>
     </div>
-    <div class="opening-hours">
-      <p>Opening Hours:</p>
-      <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
-      <p>Saturday: 10:00 AM - 4:00 PM</p>
-      <p>Sunday: Closed</p>
-    </div>
-  </div>
+
+    <script src="scripts/common_script.js"></script>
+    <script src="scripts/home_script.js"></script>
 </body>
 </html>

@@ -3,26 +3,45 @@
     font-size: 16px;
     padding: 12px 30px;
     border-radius: 50px;
-    border: 4px solid #1b749e;
+    border: 4px solid var(--secondary);
     margin: 40px auto;
+    margin-bottom: 20px;
     width: 400px;
 }
-
+#price-filter {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    margin: 20px 50px;
+    gap: 10px;
+    font-family: Acme;
+}
+#price-filter input {
+    width: 300px;
+}
 
 .product-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
+    grid-template-columns: repeat(4, 1fr);   /*4 columns 1 fraction*/
+    gap: 20px; /*bt2assimon 4 colum wben kil whde gap 20px*/
+    padding: 0 20px;
 }
 .product-item {
-    display: flex;
-    flex-flow: column nowrap;
+    display: grid;
+    grid-template-rows: 1fr 240px;
+    justify-items: center;
     align-items: center;
     text-align: center;
     padding: 15px;
+    padding-top: 30px;
     margin: 15px;
-    background-color: #ffffff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: inherit;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    border-radius: 18px;
+    transition: .5s;
+}
+.product-item:hover {
+    background-color: rgba(244, 244, 244, 0.6);
 }
 .product-item img {
     width: 100%;
@@ -31,23 +50,61 @@
     text-align: center;
 }
 .product-info {
+    display: grid;
+    grid-template-rows: 30px 30px 120px 40px;
+    justify-items: center;
     margin-top: 15px;
 	text-align: center;
 }
-.product-info button {
-    background-color: #4caf50;
-    color: white;
-    border: none;
+.price::before {
+    content: '$';
+    margin-right: 5px;
+}
+.add-to-cart-btn {
+    background-color: var(--accent);
+    color: var(--primary);
+    border: 3px solid var(--accent);
     padding: 8px 16px;
     text-align: center;
-	margin: 5px;
     text-decoration: none;
     display: inline-block;
+    font-weight: bold;
     font-size: 14px;
     cursor: pointer;
     border-radius: 4px;
-    transition: 1s;
+    transition: .5s;
 }
-.product-info button:hover {
-    background-color: #0d570f;
+.add-to-cart-btn:hover {
+    background-color: inherit;
+    color: var(--accent);
+}
+@media (max-width: 768px) {
+    .product-grid {
+        grid-template-columns: repeat(auto-fill, minmax(100%, 1fr)); /* Full width for smaller screens */
+    }
+
+    .product-item {
+        margin: 10px;
+    }
+
+    .add-to-cart-btn {
+        margin: 5px 0;
+    }
+}
+
+
+#up-arrow {
+    display: none;
+    width: 30px;
+    aspect-ratio: 1/1;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    fill: var(--accent);
+    cursor: pointer;
+    opacity: .8;
+    transition: .5s;
+}
+#up-arrow:hover {
+    opacity: 1;
 }

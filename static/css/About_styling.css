@@ -1,30 +1,28 @@
 .about-section {
-  padding: 20px;
-  text-align:center;
+	padding: 20px;
+	text-align:center;
 }
 .mission-vision-section {
-  background-color: #f4f4f4;
-  padding: 20px;
-    text-align:center;
+	background-color: #f4f4f4;
+	padding: 20px;
+	text-align:center;
 }
 .sendb{
-	color:#006CA5;
+	color: var(--secondary);
 }
 #about{
-  color:#006CA5;
-  /* !important; */
+  	color: var(--secondary);
 }
 #our{
-  color:#006CA5;
-  /* important; */
+  	color: var(--secondary);
 }
 .team-member {
     text-align: center;
     padding: 15px;
     background-color: #ffffff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-	display: flex;
-    flex-direction: column;
+	display: flex;        /* Use flexbox for layout */
+    flex-direction: column; /* Arrange children in a column */
     align-items: center;
 }
 .team-member img {
@@ -33,5 +31,26 @@
     border-radius: 50%;
 }
 .member-info {
-    margin-top: 15px;
+    margin-top: 15px; /* Add margin to the top of the member info section */
+}
+
+/* Responsive Styles for Small Screens (max-width: 768px) */
+@media (max-width:768px){
+	.team-member img {/* Adjust maximum width for team member image on small screens */ 
+	max-width:100px;}
+	.about-section,
+	.mission-vision-section{
+		padding: 10px;
+	}
+	.team-member{
+	padding: 10px;}
+	.member-info {
+        margin-top: 10px;
+	}
+}
+/* Responsive Styles for Medium Screens (min-width: 769px) and (max-width: 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {	
+	.team-member img {
+        max-width: 120px; 
+    }
 }

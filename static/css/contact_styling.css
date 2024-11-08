@@ -1,29 +1,51 @@
 .contact-container {
-    max-width: 600px;
-    margin: 50px auto;
-    padding: 20px;
+    max-width: 600px; /* Set maximum width for the contact container */
+    margin: 50px auto; /* Center the contact container with top margin */
+    padding: 20px;  /* Add padding to the contact container */
     background-color: #f1f1f1;
     border-radius: 8px;
-    color: #006CA5;
-  }
+    color: var(--secondary); /* Set text color for the contact container */
+}
 form {
-    display: flex;
-    flex-direction: column;
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Arrange form elements in a column */
 }
 label {
     margin-bottom: 8px;
-  }
+}
 input, textarea {
     padding: 10px;
     margin-bottom: 15px;
 }
-input[type="submit"] {
-    background-color: #006CA5;
+button {
+    background-color: var(--secondary);
     color: white;
+    text-transform: uppercase;
+    font-family: Acme;
+    font-weight: bold;
+    font-size: 16px;
+    letter-spacing: 4px;
     cursor: pointer;
-    border: none;
+    border: 3px solid var(--secondary);
+    padding: 8px 0px;
+    transition: .5s;
 }
-input[type="submit"]:hover {
-    color: #001b29;
+button:hover {
+    background-color: white;
+    color: var(--secondary);
 }
-  
+/* Responsive Styles for Small Screens (max-width: 600px) */
+@media (max-width: 600px) {
+    .contact-container {
+        max-width: 100%;
+    }
+
+    form {
+        width: 100%;
+    }
+
+    input,
+    textarea {
+        width: 100%;
+    }
+}
