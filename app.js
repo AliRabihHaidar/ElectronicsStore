@@ -29,30 +29,30 @@ app.use(express.static(path.join(__dirname, 'static')));
 
 // setup routes
 import indexRouter from './routes/index.js';
+import authRouter, { authMiddleware } from './routes/auth.js';
 import aboutRouter from './routes/about.js';
 import cartRouter from './routes/cart.js';
 import productsRouter from './routes/products.js';
 import contactRouter from './routes/contact.js';
 
 app.use('/', indexRouter);
-app.use('/about', aboutRouter);
-app.use('/cart', cartRouter);
-app.use('/products', productsRouter);
-app.use('/contact', contactRouter);
+app.use('/auth', authRouter);
+app.use('/about', authMiddleware, aboutRouter);
+app.use('/cart', authMiddleware, cartRouter);
+app.use('/products', authMiddleware, productsRouter);
+app.use('/contact', authMiddleware, contactRouter);
 
 
 // setup error handlers middleware
 app.use(function(req, res, next) {
 	next(createError(404));
 });
-app.use(function(err, req, res, next) {
-	// set locals, only providing error in development
-	res.locals.message = err.message;
-	res.locals.error = req.app.get('env') === 'development' ? err : {};
-
+app.use((err, req, res, next) => {
+    // Set error status and message
+    const status = err.status || 500;
+    const message = err.message || 'Internal Server Error';
 	// render the error page
-	res.status(err.status || 500);
-	res.render('error');
+	res.status(status).render('error', { message: message });
 });
 
 

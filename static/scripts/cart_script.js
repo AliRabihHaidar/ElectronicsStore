@@ -1,7 +1,4 @@
 function RemoveFromCart(product_id) {
-    const s = localStorage.getItem('cartSize') || 0;
-    localStorage.setItem('cartSize', Math.max(0, Number(s) - 1));
-
     fetch('/cart/remove-from-cart', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
@@ -14,3 +11,16 @@ function RemoveFromCart(product_id) {
     })
     .catch(error => console.error(error));
 };
+
+// handle logout button click
+document.getElementById('logout').addEventListener('click', () => {
+    fetch('/auth/logout', {
+        method: 'POST'
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);
+        location.reload();
+    })
+    .catch(error => console.error(error));
+});

@@ -13,10 +13,8 @@ CREATE TABLE `Product` (
 
 CREATE TABLE `User` (
     `user_id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    `user_name` VARCHAR(255) NOT NULL,
-    `age` INT UNSIGNED NULL,
-    `gender` ENUM('M', 'F', 'Other') NULL,
-    `registration_date` DATETIME NOT NULL,
+    `username` VARCHAR(255) UNIQUE NOT NULL,
+    `password` VARCHAR(255) NOT NULL,
     `created_at` DATETIME DEFAULT CURRENT_TIMESTAMP,
     `updated_at` DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
@@ -31,10 +29,9 @@ CREATE TABLE `Cart` (
 );
 
 CREATE TABLE `Cart_Item` (
-    `item_id` BIGINT UNSIGNED NOT NULL,
+    `item_id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
     `cart_id` BIGINT UNSIGNED NOT NULL,
     `product_id` BIGINT UNSIGNED NOT NULL,
-    PRIMARY KEY (`item_id`),
     INDEX `cart_item_cart_id_index` (`cart_id`),
     INDEX `cart_item_product_id_index` (`product_id`)
 );

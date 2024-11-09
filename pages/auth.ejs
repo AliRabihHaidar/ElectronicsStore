@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/Main_styling.css">
+    <link rel="stylesheet" href="css/auth_styling.css">
+    <title>Register or Login</title>
+</head>
+<body>
+    <header>
+        <nav class="upper-nav">
+            <div class="social-icons">
+                <a href="https://Facebook.com"><img src="images/facebooklogo.png" alt="Facebook"></a>
+                <a href="https://twitter.com"><img src="images/twitterlogo.png" alt="Twitter"></a>
+                <a href="https://instagram.com"><img src="images/instagramlogo.png" alt="Instagram"><a>
+                <a href="https://Linkedin.com"><img src="images/linkedinlogo.png" alt="LinkedIn"></a>
+            </div>
+            <div class="welcome-message">
+                <p>Welcome To Harb Telecom</p>
+            </div>
+        </nav>
+    </header>
+    <br>
+    <ul>
+        <li><a href="/">Home</li>
+        <li class="has-submenu"><a href="about">About</a></li>
+        <li><a href="products">Products</a></li>
+        <li><a href="contact">Contact Us</a></li>
+        <div id="cart-icon"><a href="cart">View Cart</a></div>
+    </ul>
+    <br>
+    <form method="POST">
+        <input type="username" name="username" placeholder="Username" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <% if (typeof errorMessage !== 'undefined') { %>
+            <p class="error-message"><%= errorMessage %></p>
+        <% } %>
+        <button type="submit" value="Register" formaction="/auth/register">Register</button>
+        <button type="submit" value="Login" formaction="/auth/login">Login</button>
+    </form>
+    <div class="Downbanner">
+        <div class="branch-info">
+            <p id="bi">Visit our branches:</p>
+            <ul>
+                <li><a href="#">1st branch:Beirut,Haret Hreik<br>01/550484-81/723602<br><br></a></li>
+                <li><a href="#">2nd branch: Nabatiyeh ,toul<br>01/550484-81/723602<br></a></li>
+            </ul>
+        </div>
+        <div class="opening-hours">
+            <p>Opening Hours:</p>
+            <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
+            <p>Saturday: 10:00 AM - 4:00 PM</p>
+            <p>Sunday: Closed</p>
+        </div>
+    </div>
+</body>
+</html>

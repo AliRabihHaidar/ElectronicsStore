@@ -13,8 +13,8 @@ contactRouter.get('/', function(req, res, next) {
 contactRouter.post('/send-message', async function (req, res) {
     const { name, email, message } = req.body;
     // Save the message in the database
-    const user_id = 3;
-    await save_message(user_id, name, email, message)
+    const username = req.user.username;
+    await save_message(username, name, email, message)
     res.render('contact', { title: 'Express' });
 });
 
