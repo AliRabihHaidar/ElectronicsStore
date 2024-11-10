@@ -6,5 +6,8 @@ window.onload = () => {
             const cartSize = data.cartSize;
             document.getElementById('cart-size').textContent = cartSize;
         })
-        .catch(error => console.error('Error fetching cart size:', error));
+        .catch(error => {
+            console.error('Error fetching cart size:', error)
+            document.getElementById('cart-size').textContent = 0;
+        });
 }
