@@ -24,7 +24,7 @@ export async function getProducts() {
 }
 
 export async function getCart(username) {
-    // join cart_item, cart, and product tables
+    // join cart_item, cart, and product tables to get each selected product info with its quantity
     const rows = await query(`
         SELECT product.product_id, product.product_name, product.price, product.description, COUNT(cart_item.cart_id) AS quantity
         FROM cart_item

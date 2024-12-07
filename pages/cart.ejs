@@ -43,7 +43,8 @@
             <% products.forEach(product => { %>
                 <div class="product-item">
                     <div class="quantity"><%= product.quantity %></div>
-					<img src="images/<%= product.product_name %>.png" alt="<%= product.product_name %>">
+					<img src="images/<%= product.product_name %>.png" onerror="this.style.display='none';">
+            		<img src="images/<%= product.product_name %>.jpg" onerror="this.style.display='none';">
                     <div class="product-info">
                         <h3><%= product.product_name %></h3>
                         <p>$<%= product.price %></p>

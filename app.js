@@ -9,7 +9,7 @@ import logger from 'morgan';
 var app = express();
 
 
-// fix for __dirname in ES modules
+// fix for __dirname in ES modules (in order to be able to use it later)
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
@@ -37,7 +37,7 @@ import contactRouter from './routes/contact.js';
 
 app.use('/', indexRouter);
 app.use('/auth', authRouter);
-app.use('/about', authMiddleware, aboutRouter);
+app.use('/about', aboutRouter);
 app.use('/cart', authMiddleware, cartRouter);
 app.use('/products', authMiddleware, productsRouter);
 app.use('/contact', authMiddleware, contactRouter);
